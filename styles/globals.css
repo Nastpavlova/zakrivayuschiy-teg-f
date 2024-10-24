@@ -26,6 +26,18 @@ li {
   padding: 0;
 }
 
+h1 {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+h2 {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+h3 {
+  font-size: 18px;
+}
+
 a {
   color: inherit;
 }
@@ -50,4 +62,13 @@ ol {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
+}
+
+.header, .main, .footer {
+  inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  background-color: var(--color-background);
+}
+
+.header {
+  block-size: clamp(20.4375rem, 19.5352rem + 3.8498vw, 23rem);
 }
