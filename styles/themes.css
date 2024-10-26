@@ -1,27 +1,24 @@
 :root.theme-dark {
     --text-name-main-weight-main: "wght" 465;
     --text-name-main-weight-title: "wght" 785;
-    
     --color-background: #000000;
     --color-accent: #00cc14;
     --color-selected:rgba(0, 204, 20, 0.6);
-
-
+    --color-hover: #00cc14;
     --image-background:
         repeating-linear-gradient(to right, #000000 0px 2px, transparent 2px 4px),
         repeating-linear-gradient(to bottom, #000000 0px 2px, transparent 2px 4px), 
         linear-gradient(to bottom, #007f0c 0.01%, #004306 100%);
-
 }
 
 :root.theme-light {
     --text-name-main-weight-main: "wght" 400;
     --text-name-main-weight-title: "wght" 700;
-
     --color-background: #ffffff;
     --color-accent: #000000;
     --color-selected: rgba(0, 0, 0, 0.6);
-
+    --color-hover-text: #000000;
+    --color-hover: #ffffff;
     --image-background:
         repeating-linear-gradient(to right, #d3d3d3 0px 2px, transparent 2px 4px),
         repeating-linear-gradient(to bottom, #d3d3d3 0px 2px, transparent 2px 4px), 
@@ -32,28 +29,26 @@
     :root {
         --text-name-main-weight-main: "wght" 465;
         --text-name-main-weight-title: "wght" 785;
-        
         --color-background: #000000;
         --color-accent: #00cc14;
         --color-selected:rgba(0, 204, 20, 0.6);
-    
-    
+        --color-hover: #00cc14;
         --image-background:
             repeating-linear-gradient(to right, #000000 0px 2px, transparent 2px 4px),
             repeating-linear-gradient(to bottom, #000000 0px 2px, transparent 2px 4px), 
             linear-gradient(to bottom, #007f0c 0.01%, #004306 100%);
-    }
+    } 
 }
 
 @media (prefers-color-scheme: light) {
     :root {
         --text-name-main-weight-main: "wght" 400;
         --text-name-main-weight-title: "wght" 700;
-    
         --color-background: #ffffff;
         --color-accent: #000000;
         --color-selected: rgba(0, 0, 0, 0.6);
-    
+        --color-hover-text: #000000;
+        --color-hover: #ffffff;
         --image-background:
             repeating-linear-gradient(to right, #d3d3d3 0px 2px, transparent 2px 4px),
             repeating-linear-gradient(to bottom, #d3d3d3 0px 2px, transparent 2px 4px), 
