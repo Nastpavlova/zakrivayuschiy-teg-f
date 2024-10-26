@@ -1,60 +1,36 @@
+.theme-menu__button {
+  position: relative;
+  transition: color 0.3s ease;
+}
 .theme-menu__button[disabled] {
-    position: relative;
     pointer-events: none;
-    animation-name: hover-item;
-    animation-iteration-count: 1;
-    animation-duration: 0.3s;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-  }
-  
-  .theme-menu__button:hover {
-    position: relative;
-    cursor: pointer;
-    animation-name: hover-item;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease;
-  }
-  
-  @keyframes hover-item {
-    0% {
-      color: var(--color-accent);
-    }
-  
-    100% {
-      color: var(--color-selected);
-    }
-  }
-
-  .theme-menu__button:focus-visible {
-    outline: none;
-    border: none;
     color: var(--color-selected);
   }
   
-  .theme-menu__button:focus-visible::after {
-    content: "";
-    background-color: var(--color-selected);
-    height: 2px;
-    display: block;
-    animation-name: focus-item;
-    transform-origin: left;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease;
+  .theme-menu__button:hover {
+    cursor: pointer;
+    color: var(--color-selected);
   }
   
-  @keyframes focus-item {
-    0% {
-      transform: scaleX(0);
-    }
-  
-    100% {
-      transform: scaleX(1);
-    }
+  .theme-menu__button:focus-visible {
+    outline: none;
+    color: var(--color-selected);
   }
 
+  .theme-menu__button::after {
+    content: "";
+    block-size: 2px;
+    background-color: var(--color-selected);
+    display: block;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .theme-menu__button:focus-visible::after {
+    transform: scaleX(1);
+  }
+  
   .theme-menu__button[disabled]::before {
     content: "▶";
     position: absolute;
@@ -79,36 +55,6 @@
     }
   }
 
-  @supports((text-stroke: 1px var(--color-background)) or (-webkit-text-stroke: 1px var(--color-background))) {
-    .label {
-        -webkit-text-stroke: 1px var(--color-background);
-        text-stroke: 1px var(--color-background);
-        text-shadow: none;
-    }
-  } 
-
-  .all_buttons:focus-visible {
-    outline: none;
-    animation-name: icon-hover;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease;
-  }
-  
-  @keyframes icon-hover {
-    0% {
-      border: none;
-    }
-    100% {
-      border: 2px solid var(--color-accent);
-    }
-  }
-
-  .like-icon.is-liked .contour {
-    fill: var(--color-accent);
-    transition: fill 0.3s linear 0.06s; 
-  }
-
   .contour {
     fill: var(--color-accent);
     transition: fill 0.1s linear; 
@@ -121,7 +67,6 @@
   
   .heart {
     fill:transparent;
-    transition: fill 0.3s ease 0.06s;
   }
 
   .like-icon.is-liked .heart {
@@ -129,7 +74,7 @@
     animation-delay: 0.1s;
     animation-duration: 0.3s;
     animation-timing-function: ease-in;
-    animation-iteration-count: 2;
+    animation-iteration-count: 1;
     animation-direction: alternate;
     transform-origin: center;
   }
@@ -146,7 +91,7 @@
 
   .core {
     fill:transparent;
-    transition: fill 0.3s ease 0.03s;
+    transition: fill 0.3s linear 0.03s;
   }
   
   .like-icon:hover .core {
@@ -156,17 +101,17 @@
   
   .like-icon:active .core {
     fill:var(--color-sparks);
-    transition: fill 0.3s ease;
+    transition: fill 0.3s linear;
   }
   
   .like-icon.is-liked .core {
     fill:var(--color-sparks);
-    transition: fill 0.3s ease;
+    transition: fill 0.3s linear;
   }
 
   .main-body {
     fill: transparent;
-    transition: fill 0.3s ease;
+    transition: fill 0.3s linear;
   }
   
   .like-icon:hover .main-body {
@@ -176,12 +121,12 @@
   
   .like-icon:active .main-body {
     fill:var(--color-sparks);
-    transition: fill 0.3s ease 0.05s;
+    transition: fill 0.3s linear 0.05s;
   }
   
   .like-icon.is-liked .main-body {
     fill:var(--color-sparks);
-    transition: fill 0.3s ease 0.05s;
+    transition: fill 0.3s linear 0.05s;
   }
 
   .sparks {
@@ -206,7 +151,12 @@
     }
   }
 
-  .button:hover::before {
+  .button {
+    box-shadow: 0px 0px 0 var(--color-accent);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .button::before {
     content: "";
     background-color: var(--color-accent);
     position: absolute;
@@ -215,37 +165,16 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-    animation-name: hover-but;
+    transform: scaleX(0);
     transform-origin: left;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
-  }
-  
-  @keyframes hover-but {
-    0% {
-      transform: scaleX(0);
-    }
-  
-    100% {
-      transform: scaleX(1);
-    }
+    transition: transform 0.5s ease-in-out;
   }
 
-  .button:focus-visible {
-    outline: none;
-    animation-name: hover-item-button;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease;
+  .button:hover::before {
+    transform: scaleX(1);
   }
   
-  @keyframes hover-item-button {
-    0% {
-      box-shadow: 0px 0px 0 var(--color-accent);
-    }
-  
-    100% {
-      box-shadow: 2px 2px 0 var(--color-accent);
-    }
+  .button:focus-visible {
+    outline: none;
+    box-shadow: 2px 2px 0 var(--color-accent);
   }

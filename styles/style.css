@@ -17,7 +17,7 @@
 
 @media (min-width: 1440px) {
   .article-title {
-    padding: 4px 24px 3px 10px; /*в макете меньше паддинг*/
+    padding: 4px 24px 2.5px 10px; /*в макете меньше паддинг*/
   }
   .footer-button {
     flex-direction: row;
@@ -38,6 +38,7 @@
   font-variation-settings: var(--text-name-main-weight-main);
   color: var(--color-accent);
   background-image: var(--image-background);
+  background-attachment: fixed;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -46,8 +47,10 @@
 }
 
 .header {
+  inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
   margin-bottom: 100px ;
   padding-top: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
+  padding-bottom: 25px;
   text-transform: uppercase;
   font-family: var(--text-name-title);
   display: flex;
@@ -68,8 +71,7 @@
 .theme-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  line-height: 14px;
+  gap: 12px;
   padding-left: 18px;
   font-size: 14px;
 }
@@ -82,7 +84,9 @@
 }
 
 .main {
+  inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
   display: flex;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -96,8 +100,8 @@
 }
 
 .article-title {
-  min-block-size: 31px;
   line-height: clamp(1.3125rem, 1.2245rem + 0.3756vw, 1.5625rem);
+  font-size: 18px;
   font-variation-settings: var(--text-name-main-weight-title);
 }
 
@@ -111,6 +115,7 @@
   height: 100%;
   border: 2px solid var(--color-accent);
   object-fit: cover;
+  object-position: center;
 }
 
 .img-brightness {
@@ -156,6 +161,14 @@
     1px 0 var(--color-background), 
     0 -1px var(--color-background);
 }
+
+@supports((text-stroke: 1px var(--color-background)) or (-webkit-text-stroke: 1px var(--color-background))) {
+  .label {
+      -webkit-text-stroke: 1px var(--color-background);
+      text-stroke: 1px var(--color-background);
+      text-shadow: none;
+  }
+} 
 
 .article-text {
   padding: 25px;
@@ -240,7 +253,6 @@
   padding: 30px;
   outline: none;
   border: 2px solid var(--color-accent);
-  block-size: 191px;
   inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
 }
 
@@ -287,4 +299,8 @@
   position: relative;
   inline-size: 100%;
   block-size: 38px;
+}
+
+.dialog_button .button__text {
+  text-transform: uppercase;
 }
