@@ -1,7 +1,7 @@
 :root {
-    --text-name-title: 'PressStart2P', sans-serif;
-    --text-name-main: 'Inter-Variable', sans-serif;
-    --text-name-main-weight-main: "wght" 400;
-    --text-name-main-weight-title: "wght" 700;
-    --color-sparks: red;
-  }
+  --text-name-title: "PressStart2P", sans-serif;
+  --text-name-main: "Inter-Variable", sans-serif;
+  --text-name-main-weight-main: "wght" 400;
+  --text-name-main-weight-title: "wght" 700;
+  --color-sparks: red;
+}

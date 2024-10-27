@@ -11,7 +11,7 @@
     block-size: 28px;
   }
   .main {
-    gap: 50px;    
+    gap: 50px;
   }
 }
 
@@ -48,7 +48,7 @@
 
 .header {
   inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
-  margin-bottom: 100px ;
+  margin-bottom: 100px;
   padding-top: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
   padding-bottom: 25px;
   text-transform: uppercase;
@@ -155,20 +155,20 @@
   right: clamp(0.6875rem, 0.3794rem + 1.3146vw, 1.5625rem);
   mix-blend-mode: hard-light;
   opacity: 0.5;
-  text-shadow:
-    -1px 0 var(--color-background), 
-    0 1px var(--color-background), 
-    1px 0 var(--color-background), 
-    0 -1px var(--color-background);
+  text-shadow: -1px 0 var(--color-background), 0 1px var(--color-background),
+    1px 0 var(--color-background), 0 -1px var(--color-background);
 }
 
-@supports((text-stroke: 1px var(--color-background)) or (-webkit-text-stroke: 1px var(--color-background))) {
+@supports (
+  (text-stroke: 1px var(--color-background)) or
+    (-webkit-text-stroke: 1px var(--color-background))
+) {
   .label {
-      -webkit-text-stroke: 1px var(--color-background);
-      text-stroke: 1px var(--color-background);
-      text-shadow: none;
+    -webkit-text-stroke: 1px var(--color-background);
+    text-stroke: 1px var(--color-background);
+    text-shadow: none;
   }
-} 
+}
 
 .article-text {
   padding: 25px;
@@ -193,12 +193,14 @@
   justify-content: center;
   align-items: center;
   border: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
   background-color: transparent;
+  transition: outline-color 0.3s ease;
 }
 
 .card__icon-button:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: -2px;
+  outline-color: var(--color-accent);
 }
 
 .all_buttons {
@@ -221,7 +223,7 @@
 
 .footer {
   display: flex;
-  justify-content: center;  
+  justify-content: center;
   padding-top: 50px;
 }
 
@@ -245,7 +247,7 @@
 .button__text {
   z-index: 1;
   color: var(--color-hover);
-  mix-blend-mode: difference; 
+  mix-blend-mode: difference;
 }
 
 .dialog {
